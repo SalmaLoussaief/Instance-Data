@@ -1,0 +1,46 @@
+@prefix : <http://www.metaphacts.com/resource/> .
+@prefix lookup: <http://www.metaphacts.com/ontologies/platform/repository/lookup#> .
+@prefix User: <http://www.metaphacts.com/resource/user/> .
+@prefix Help: <http://help.metaphacts.com/resource/> .
+@prefix Platform: <http://www.metaphacts.com/ontologies/platform#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix Service: <http://www.metaphacts.com/ontologies/platform/service/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix Admin: <http://www.metaphacts.com/resource/admin/> .
+@prefix Repository: <http://www.metaphacts.com/ontologies/repository#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix Assets: <http://www.metaphacts.com/resource/assets/> .
+@prefix ephedra: <http://www.metaphacts.com/ontologies/platform/ephedra#> .
+@prefix sp: <http://spinrdf.org/sp#> .
+
+<file:///dataset.ttl-16-05-2022-01-14-55> {
+  <http://www.siemens.com/si-cpq/data/SalesRegionGlobalSales> a <http://www.siemens.com/si-cpq#SalesRegion>;
+    rdfs:label "Global Sales" .
+  
+  <http://www.siemens.com/si-cpq/data/material-6MD5503-0AP00-0AA3> a <http://www.siemens.com/si-cpq#Material>;
+    <http://www.siemens.com/si-cpq#materialNumber> "6MD5503-0AP00-0AA3";
+    <http://www.siemens.com/si-cpq#hasNetListPrice> <http://www.siemens.com/si-cpq/data/price-6MD5503-0AP00-0AA3>;
+    <http://www.siemens.com/si-cpq#hasTransferFactor> <http://www.siemens.com/si-cpq/data/TransferFactor_6MD5503-0AP00-0AA3_2022_GlobalSales_Standard> .
+  
+  <http://www.siemens.com/si-cpq/data/TransferFactor_6MD5503-0AP00-0AA3_2022_GlobalSales_Standard>
+    a <http://www.siemens.com/si-cpq#TransferFactor>;
+    <http://www.siemens.com/si-cpq#isForCostList> <http://www.siemens.com/si-cpq/data/CostListStandard-SalesRegionGlobalSales>;
+    <http://www.siemens.com/si-cpq#isForSalesRegion> <http://www.siemens.com/si-cpq/data/SalesRegionGlobalSales>;
+    <http://www.siemens.com/si-cpq#factorValue> "1" .
+  
+  <http://www.siemens.com/si-cpq/data/CostListStandard-SalesRegionGlobalSales> a <http://www.siemens.com/si-cpq#CostList>;
+    rdfs:label "Standard" .
+  
+  User:admin <http://www.siemens.com/si-cpq#hasCurrentSelectedRegion> "Global Sales" .
+  
+  <http://www.siemens.com/si-cpq/data/price-6MD5503-0AP00-0AA3> <http://www.siemens.com/si-cpq#currencyCode>
+      "EUR";
+    <http://www.siemens.com/si-cpq#priceValue> 1270 .
+  
+  <http://www.siemens.com/si-cpq/data/TransferPrice-6MD5503-0AP00-0AA3-2022-SalesRegion-GlobalSales>
+    <http://www.siemens.com/si-cpq#priceValue> "1270";
+    <http://www.siemens.com/si-cpq#isCalculatedBasedOn> <http://www.siemens.com/si-cpq/data/TransferFactor_6MD5503-0AP00-0AA3_2022_GlobalSales_Standard> .
+}
